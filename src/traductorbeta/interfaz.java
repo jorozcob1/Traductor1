@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import Clases.Lexico;
 import Clases.Sintactico;
 import java.io.FileNotFoundException;
+import java.io.StringReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -48,7 +49,7 @@ public class interfaz extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TxtCod1 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        TxtCod2 = new javax.swing.JTextArea();
+        TxtCod3 = new javax.swing.JTextArea();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         MSalir = new javax.swing.JMenuItem();
@@ -69,9 +70,9 @@ public class interfaz extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TxtCod1);
 
-        TxtCod2.setColumns(20);
-        TxtCod2.setRows(5);
-        jScrollPane2.setViewportView(TxtCod2);
+        TxtCod3.setColumns(20);
+        TxtCod3.setRows(5);
+        jScrollPane2.setViewportView(TxtCod3);
 
         jMenu3.setText("Opciones");
 
@@ -125,25 +126,25 @@ public class interfaz extends javax.swing.JFrame {
 
     private void TxtCod1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtCod1KeyTyped
         // TODO add your handling code here:
-        if(evt.getKeyChar()==KeyEvent.VK_SPACE){
-                  Reader reader = null;
-            try {
-                reader = new BufferedReader(new FileReader(TxtCod1.getText()));
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
-            }
-                  Lexico lexer =new Lexico(reader);//se genera el analisis lexico
-                  Sintactico par=new Sintactico(lexer);//una que el analisis lexico este correcto se le pasa al analisis sintactico
-            try {
+        String stringToBeParsed = TxtCod1.getText();
+        StringReader reade = new StringReader(stringToBeParsed);
+        if(evt.getKeyChar()==KeyEvent.VK_ENTER){
+                  //Reader reader = new BufferedReader(new FileReader("C:\\Users\\Usuario\\Desktop\\ElCompliIE2.1\\src\\elcompliie2\\entrada.txt"));
+                  
+            try {  
+                Lexico lexer =new Lexico(reade);//se genera el analisis lexico
+                Sintactico par=new Sintactico(lexer);//una que el analisis lexico este correcto se le pasa al analisis sintactico
                 par.parse();
+                Traducir s =new Traducir();
+                TxtCod3.setText("hola "+s.traducio);
             } catch (Exception ex) {
                 Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
          
-        if(evt.getKeyChar()==KeyEvent.VK_ENTER){
-          JOptionPane.showMessageDialog(null, "Mendigo otaku");
-        }
+//        if(evt.getKeyChar()==KeyEvent.VK_ENTER){
+//          JOptionPane.showMessageDialog(null, "Mendigo otaku");
+//        }
     }//GEN-LAST:event_TxtCod1KeyTyped
 
     private void MSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MSalirActionPerformed
@@ -207,8 +208,8 @@ class FondoPanel extends JPanel
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu MInfor;
     private javax.swing.JMenuItem MSalir;
-    private javax.swing.JTextArea TxtCod1;
-    private javax.swing.JTextArea TxtCod2;
+    public javax.swing.JTextArea TxtCod1;
+    public javax.swing.JTextArea TxtCod3;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;

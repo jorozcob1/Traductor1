@@ -2,7 +2,7 @@ package Clases;
 import java_cup.runtime.*;
 import java.util.Hashtable;
 import Tablas.TablaSimbolos;
-import elcompliie2.Traducir;
+import traductorbeta.Traducir;
 
 
 parser code
