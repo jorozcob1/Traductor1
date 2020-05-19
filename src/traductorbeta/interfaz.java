@@ -8,9 +8,17 @@ package traductorbeta;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.Reader;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import Clases.Lexico;
+import Clases.Sintactico;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -36,12 +44,21 @@ public class interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem2 = new javax.swing.JMenuItem();
         jScrollPane1 = new javax.swing.JScrollPane();
         TxtCod1 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         TxtCod2 = new javax.swing.JTextArea();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        MSalir = new javax.swing.JMenuItem();
+        MInfor = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         TxtCod1.setColumns(20);
         TxtCod1.setRows(5);
@@ -55,6 +72,32 @@ public class interfaz extends javax.swing.JFrame {
         TxtCod2.setColumns(20);
         TxtCod2.setRows(5);
         jScrollPane2.setViewportView(TxtCod2);
+
+        jMenu3.setText("Opciones");
+
+        MSalir.setText("Salir");
+        MSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MSalirActionPerformed(evt);
+            }
+        });
+        jMenu3.add(MSalir);
+
+        jMenuBar2.add(jMenu3);
+
+        MInfor.setText("Informacion");
+
+        jMenuItem1.setText("Informacion");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        MInfor.add(jMenuItem1);
+
+        jMenuBar2.add(MInfor);
+
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,7 +117,7 @@ public class interfaz extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         pack();
@@ -83,13 +126,35 @@ public class interfaz extends javax.swing.JFrame {
     private void TxtCod1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtCod1KeyTyped
         // TODO add your handling code here:
         if(evt.getKeyChar()==KeyEvent.VK_SPACE){
-            JOptionPane.showMessageDialog(null, "Mendigo otaku");
+                  Reader reader = null;
+            try {
+                reader = new BufferedReader(new FileReader(TxtCod1.getText()));
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                  Lexico lexer =new Lexico(reader);//se genera el analisis lexico
+                  Sintactico par=new Sintactico(lexer);//una que el analisis lexico este correcto se le pasa al analisis sintactico
+            try {
+                par.parse();
+            } catch (Exception ex) {
+                Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
          
         if(evt.getKeyChar()==KeyEvent.VK_ENTER){
           JOptionPane.showMessageDialog(null, "Mendigo otaku");
         }
     }//GEN-LAST:event_TxtCod1KeyTyped
+
+    private void MSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MSalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_MSalirActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Mete casaca");
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,8 +205,14 @@ class FondoPanel extends JPanel
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu MInfor;
+    private javax.swing.JMenuItem MSalir;
     private javax.swing.JTextArea TxtCod1;
     private javax.swing.JTextArea TxtCod2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
