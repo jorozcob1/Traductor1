@@ -10,6 +10,7 @@ import java_cup.runtime.*;
 import java.util.Hashtable;
 import Tablas.TablaSimbolos;
 import traductorbeta.Traducir;
+import traductorbeta.interfaz;
 
 /** CUP v0.11a beta 20060608 generated parser.
   * @version Thu May 24 21:59:52 CST 2018
@@ -268,6 +269,9 @@ Traducir tra=new Traducir();
 		int cright = ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()).right;
 		Object c = (Object)((java_cup.runtime.Symbol) CUP$Sintactico$stack.peek()).value;
 		tra.tobeafirmacion(a.toString().toLowerCase()+" "+b.toString().toLowerCase()+" "+c.toString().toLowerCase());
+                interfaz d=new interfaz();
+                //d.Trad.setText(s);
+               // d.TxtCod3.setText(tra.tobeafirmacion(a.toString().toLowerCase()+" "+b.toString().toLowerCase()+" "+c.toString().toLowerCase()));
               CUP$Sintactico$result = parser.getSymbolFactory().newSymbol("REGLAS",2, ((java_cup.runtime.Symbol)CUP$Sintactico$stack.elementAt(CUP$Sintactico$top-2)), ((java_cup.runtime.Symbol)CUP$Sintactico$stack.peek()), RESULT);
             }
           return CUP$Sintactico$result;

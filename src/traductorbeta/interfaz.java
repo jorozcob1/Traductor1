@@ -50,8 +50,10 @@ public class interfaz extends javax.swing.JFrame {
         TxtCod1 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         TxtCod3 = new javax.swing.JTextArea();
+        Trad = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
+        Limpiar = new javax.swing.JMenuItem();
         MSalir = new javax.swing.JMenuItem();
         MInfor = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -74,7 +76,17 @@ public class interfaz extends javax.swing.JFrame {
         TxtCod3.setRows(5);
         jScrollPane2.setViewportView(TxtCod3);
 
+        Trad.setText("jLabel1");
+
         jMenu3.setText("Opciones");
+
+        Limpiar.setText("Limpiar");
+        Limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LimpiarActionPerformed(evt);
+            }
+        });
+        jMenu3.add(Limpiar);
 
         MSalir.setText("Salir");
         MSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -110,11 +122,17 @@ public class interfaz extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(74, 74, 74))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Trad)
+                .addGap(217, 217, 217))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGap(36, 36, 36)
+                .addComponent(Trad)
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -132,11 +150,16 @@ public class interfaz extends javax.swing.JFrame {
                   //Reader reader = new BufferedReader(new FileReader("C:\\Users\\Usuario\\Desktop\\ElCompliIE2.1\\src\\elcompliie2\\entrada.txt"));
                   
             try {  
+                TxtCod3.removeAll();
                 Lexico lexer =new Lexico(reade);//se genera el analisis lexico
                 Sintactico par=new Sintactico(lexer);//una que el analisis lexico este correcto se le pasa al analisis sintactico
                 par.parse();
                 Traducir s =new Traducir();
-                TxtCod3.setText("hola "+s.traducio);
+                String sd="";
+                sd=s.afirmati;
+                TxtCod3.setText(sd);
+                s.afirmati="";
+               
             } catch (Exception ex) {
                 Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -156,6 +179,12 @@ public class interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Mete casaca");
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarActionPerformed
+        // TODO add your handling code here:
+        this.TxtCod1.setText("");
+        this.TxtCod3.setText("");
+    }//GEN-LAST:event_LimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,8 +235,10 @@ class FondoPanel extends JPanel
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Limpiar;
     private javax.swing.JMenu MInfor;
     private javax.swing.JMenuItem MSalir;
+    public javax.swing.JLabel Trad;
     public javax.swing.JTextArea TxtCod1;
     public javax.swing.JTextArea TxtCod3;
     private javax.swing.JMenu jMenu3;
