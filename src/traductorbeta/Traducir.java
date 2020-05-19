@@ -197,8 +197,8 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      if(analizar[3].equals(arreglo_datos[0]))
              {
              //System.out.print("Tu no "+arreglo_datos[2]+"\n");
-                 neg="Tu no "+arreglo_datos[2]+"\n";
-                 afirmati+="Tu no "+arreglo_datos[2]+"\n";
+                 neg="Tu no "+arreglo_datos[5]+"\n";
+                 afirmati+=neg;
             // in.TxtCod3.setText("Tu no "+arreglo_datos[2]+"\n");
              }
  }
@@ -216,7 +216,7 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
              {
               //in.TxtCod3.setText("Nosotros no "+arreglo_datos[3]+"\n");
             // System.out.print("Nosotros no "+arreglo_datos[3]+"\n");
-                 neg="Nosotros no "+arreglo_datos[3]+"\n";
+                 neg="Nosotros no "+arreglo_datos[2]+"\n";
                  afirmati+=neg;
              }
  }
@@ -256,7 +256,7 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
              {
                  //in.TxtCod3.setText("Ella no "+arreglo_datos[5]+"\n");
              //System.out.print("Ella no "+arreglo_datos[5]+"\n");
-                 neg="Ella no "+arreglo_datos[5]+"\n";
+                 neg="Ella no "+arreglo_datos[4]+"\n";
                  afirmati+=neg;
              }
  }
@@ -274,7 +274,7 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
              {
                  //in.TxtCod3.setText("El no "+arreglo_datos[5]+"\n");
             // System.out.print("El no "+arreglo_datos[5]+"\n
-                 neg="El no "+arreglo_datos[5]+"\n";
+                 neg="El no "+arreglo_datos[4]+"\n";
                  afirmati+=neg;
              }
  }
@@ -293,7 +293,7 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
              {
                  //in.TxtCod3.setText("Esto no "+arreglo_datos[5]+"\n");
             // System.out.print("Esto no "+arreglo_datos[5]+"\n");
-                 neg="Esto no "+arreglo_datos[5]+"\n";
+                 neg="Esto no "+arreglo_datos[4]+"\n";
                  afirmati+=neg;
              }
  }
@@ -452,7 +452,7 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
     
     
     
-public void simpleafir(String palabra) throws IOException{
+    public void simpleafir(String palabra) throws IOException{
   String si=""; 
  String analizar[]=palabra.split(" "); 
  
