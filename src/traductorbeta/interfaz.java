@@ -50,7 +50,6 @@ public class interfaz extends javax.swing.JFrame {
         TxtCod1 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         TxtCod3 = new javax.swing.JTextArea();
-        Trad = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         Limpiar = new javax.swing.JMenuItem();
@@ -75,8 +74,6 @@ public class interfaz extends javax.swing.JFrame {
         TxtCod3.setColumns(20);
         TxtCod3.setRows(5);
         jScrollPane2.setViewportView(TxtCod3);
-
-        Trad.setText("jLabel1");
 
         jMenu3.setText("Opciones");
 
@@ -122,17 +119,11 @@ public class interfaz extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(74, 74, 74))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Trad)
-                .addGap(217, 217, 217))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(Trad)
-                .addGap(53, 53, 53)
+                .addGap(105, 105, 105)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -238,7 +229,6 @@ class FondoPanel extends JPanel
     private javax.swing.JMenuItem Limpiar;
     private javax.swing.JMenu MInfor;
     private javax.swing.JMenuItem MSalir;
-    public javax.swing.JLabel Trad;
     public javax.swing.JTextArea TxtCod1;
     public javax.swing.JTextArea TxtCod3;
     private javax.swing.JMenu jMenu3;
