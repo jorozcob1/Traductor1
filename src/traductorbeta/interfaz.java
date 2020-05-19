@@ -164,11 +164,17 @@ public class interfaz extends javax.swing.JFrame {
     private void MSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MSalirActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        this.disable();
     }//GEN-LAST:event_MSalirActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Mete casaca");
+        JOptionPane.showMessageDialog(null, "El traductor fue desarrollado con fines educativos\n"
+                + "Integrantes: \n"
+                + "Juan de Dios \n"
+                + "Mariela Micheo \n"
+                + "Jose Orozco \n"
+                + "Maria Jose");
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarActionPerformed
