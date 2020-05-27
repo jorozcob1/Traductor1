@@ -19,19 +19,20 @@ public class Traducir {
     interfaz in=new interfaz();
    public static String traducio="", afirmati="";
    
-    public void tobeafirmacion(String palabra) throws IOException{
+    public void tobeafirmacion(String palabra) throws IOException{//recibe string 
     String afir="";  
- String analizar[]=palabra.split(" "); 
- String linea;  
- String escribir="";
-BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TraductorBeta\\src\\Otros\\verbos.csv"));
-
- if(analizar[0].equals("i"))
+    String analizar[]=palabra.split(" "); // se crea el array que separa por espacios el parametro recibido
+    String linea;  
+    String escribir="";
+BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TraductorBeta\\src\\Otros\\verbos.csv"));//lee archibo verbos
+//comparar que tipo de pronombre hay 
+ if(analizar[0].equals("i"))// ejemplo: i will play 
+     //seria lo mismo para los otros pronombres 
 {
      while ((linea=reader.readLine()) !=null)
  {  
      
-     String[] arreglo_datos = linea.split(";");
+     String[] arreglo_datos = linea.split(";");//separar el archivo archivo.csv
      
      if(analizar[2].equals(arreglo_datos[0]))
              {
@@ -52,8 +53,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[2].equals(arreglo_datos[0]))
              {
-             //System.out.print("Tu "+arreglo_datos[2]+"\n");
-             //in.TxtCod3.setText("tu "+arreglo_datos[2]+"\n");
              traducio="Tu "+arreglo_datos[5]+"\n";
              afirmati+=traducio;
              }
@@ -70,9 +69,7 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      String[] arreglo_datos = linea.split(";");
      
      if(analizar[2].equals(arreglo_datos[0]))
-             {
-             //System.out.print("Nosotros "+arreglo_datos[3]+"\n");
-                // in.TxtCod3.setText("Nosotros "+arreglo_datos[3]+"\n"); 
+             { 
                  traducio="Nosotros "+arreglo_datos[2]+"\n";
                  afirmati+=traducio;
              }
@@ -89,9 +86,7 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      String[] arreglo_datos = linea.split(";");
      
      if(analizar[2].equals(arreglo_datos[0]))
-             {
-             //System.out.print("Ellos "+arreglo_datos[3]+"\n");
-                 //in.TxtCod3.setText("Ellos "+arreglo_datos[4]+"\n"); 
+             { 
                  traducio="Ellos "+arreglo_datos[3]+"\n";
                  afirmati+=traducio;
              }
@@ -110,8 +105,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[2].equals(arreglo_datos[0]))
              {
-           //  System.out.print("Ella "+arreglo_datos[4]+"\n");
-                 //in.TxtCod3.setText("Ella "+arreglo_datos[5]+"\n");
                  traducio="Ella "+arreglo_datos[4]+"\n";
                  afirmati+=traducio;
              }
@@ -129,8 +122,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[2].equals(arreglo_datos[0]))
              {
-            // System.out.print("El "+arreglo_datos[4]+"\n");
-                 //in.TxtCod3.setText("El "+arreglo_datos[5]+"\n");
                  traducio="El "+arreglo_datos[4]+"\n";
                  afirmati+=traducio;
              }
@@ -148,8 +139,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[2].equals(arreglo_datos[0]))
              {
-             //System.out.print("Esto "+arreglo_datos[4]+"\n");
-                 //in.TxtCod3.setText("Esto "+arreglo_datos[5]+"\n");
                  traducio="Esto "+arreglo_datos[4]+"\n";
                  afirmati+=traducio;
              }
@@ -178,11 +167,9 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[3].equals(arreglo_datos[0]))
              {
-                 //System.out.print("Yo no "+arreglo_datos[1]+"\n");
                  neg="Yo no "+arreglo_datos[1]+"\n";
                  afirmati+=neg;
-                 //in.TxtCod3.setText("Yo no "+arreglo_datos[1]+"\n");
-             }
+                 }
  }
 
 }
@@ -196,10 +183,8 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[3].equals(arreglo_datos[0]))
              {
-             //System.out.print("Tu no "+arreglo_datos[2]+"\n");
                  neg="Tu no "+arreglo_datos[5]+"\n";
                  afirmati+=neg;
-            // in.TxtCod3.setText("Tu no "+arreglo_datos[2]+"\n");
              }
  }
     
@@ -214,8 +199,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[3].equals(arreglo_datos[0]))
              {
-              //in.TxtCod3.setText("Nosotros no "+arreglo_datos[3]+"\n");
-            // System.out.print("Nosotros no "+arreglo_datos[3]+"\n");
                  neg="Nosotros no "+arreglo_datos[2]+"\n";
                  afirmati+=neg;
              }
@@ -233,10 +216,8 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[3].equals(arreglo_datos[0]))
              {
-                 //in.TxtCod3.setText("Ellos no "+arreglo_datos[3]+"\n");
                  neg="Ellos no "+arreglo_datos[3]+"\n";
                  afirmati+=neg;
-             //System.out.print("Ellos no "+arreglo_datos[3]+"\n");
              }
  }
     
@@ -254,8 +235,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[3].equals(arreglo_datos[0]))
              {
-                 //in.TxtCod3.setText("Ella no "+arreglo_datos[5]+"\n");
-             //System.out.print("Ella no "+arreglo_datos[5]+"\n");
                  neg="Ella no "+arreglo_datos[4]+"\n";
                  afirmati+=neg;
              }
@@ -272,8 +251,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[3].equals(arreglo_datos[0]))
              {
-                 //in.TxtCod3.setText("El no "+arreglo_datos[5]+"\n");
-            // System.out.print("El no "+arreglo_datos[5]+"\n
                  neg="El no "+arreglo_datos[4]+"\n";
                  afirmati+=neg;
              }
@@ -291,8 +268,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[3].equals(arreglo_datos[0]))
              {
-                 //in.TxtCod3.setText("Esto no "+arreglo_datos[5]+"\n");
-            // System.out.print("Esto no "+arreglo_datos[5]+"\n");
                  neg="Esto no "+arreglo_datos[4]+"\n";
                  afirmati+=neg;
              }
@@ -321,10 +296,8 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[2].equals(arreglo_datos[0]))
              {
-             //System.out.print("¿Yo "+arreglo_datos[1]+"?\n");
                  qu="¿Yo "+arreglo_datos[1]+"?\n";
                  afirmati+=qu;
-                // in.TxtCod3.setText("¿Yo "+arreglo_datos[1]+"?\n");
              }
  }
 
@@ -339,10 +312,8 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[2].equals(arreglo_datos[0]))
              {
-                  //in.TxtCod3.setText("¿Tu "+arreglo_datos[2]+"?\n");
                  qu="¿Tu "+arreglo_datos[2]+"?\n";
                  afirmati+=qu;
-             //System.out.print("¿Tu "+arreglo_datos[2]+"?\n");
                  
              }
  }
@@ -359,8 +330,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[2].equals(arreglo_datos[0]))
              {
-                  //in.TxtCod3.setText("¿Nosotros "+arreglo_datos[3]+"?\n");
-             //System.out.print("¿Nosotros "+arreglo_datos[3]+"?\n");
                  qu="¿Nosotros "+arreglo_datos[3]+"?\n";
                  afirmati+=qu;
                  
@@ -379,8 +348,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[2].equals(arreglo_datos[0]))
              {
-                  //in.TxtCod3.setText("¿Ellos "+arreglo_datos[4]+"?\n");
-             //System.out.print("¿Ellos "+arreglo_datos[4]+"?\n");
                  qu="¿Ellos "+arreglo_datos[4]+"?\n";
                  afirmati+=qu;
              }
@@ -399,8 +366,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[2].equals(arreglo_datos[0]))
              {
-                 // in.TxtCod3.setText("¿Ella "+arreglo_datos[5]+"?\n");
-             //System.out.print("¿Ella "+arreglo_datos[5]+"?\n");
                  qu="¿Ella "+arreglo_datos[5]+"?\n";
                  afirmati+=qu;
              }
@@ -417,8 +382,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      
      if(analizar[2].equals(arreglo_datos[0]))
              {
-                  //in.TxtCod3.setText("¿El "+arreglo_datos[5]+"?\n");
-             //System.out.print("¿El "+arreglo_datos[5]+"?\n");
                  qu="¿El "+arreglo_datos[5]+"?\n";
                  afirmati+=qu;
              }
@@ -437,7 +400,6 @@ BufferedReader reader=new BufferedReader(new FileReader("C:\\Users\\Usuario\\Doc
      if(analizar[2].equals(arreglo_datos[0]))
              {
                   
-             //System.out.print("¿Esto "+arreglo_datos[5]+"?\n");
                  qu="¿Esto "+arreglo_datos[5]+"?\n";
                  afirmati+=qu;
                  
